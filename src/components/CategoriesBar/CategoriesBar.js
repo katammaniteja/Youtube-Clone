@@ -1,8 +1,8 @@
-import React from 'react'
-import { useState } from 'react'
-import './_categoriesBar.scss'
+import React from "react";
+import { useState } from "react";
+import "./_categoriesBar.scss";
 
-const keywords=[
+const keywords = [
   "All",
   "React js",
   "Angular js",
@@ -17,24 +17,29 @@ const keywords=[
   "Cricket",
   "Footbal",
   "Real Madrid",
-  "Gatsby"
-]
+  "Gatsby",
+];
 
 export default function CategoriesBar() {
+  const [active, setactive] = useState("All");
 
-  const [active,setactive] = useState("All");
-
-  const handleClick = (value)=>{
+  const handleClick = (value) => {
     setactive(value);
-  }
+  };
 
   return (
-    <div className='categoriesbar'>
-      {
-        keywords.map((item,index)=>{
-          return <span key={index} onClick={()=>handleClick(item)} className={(active===item)?"active":""}>{item}</span>
-        })
-      }
+    <div className="categoriesbar">
+      {keywords.map((item, index) => {
+        return (
+          <span
+            key={index}
+            onClick={() => handleClick(item)}
+            className={active === item ? "active" : ""}
+          >
+            {item}
+          </span>
+        );
+      })}
     </div>
-  )
+  );
 }

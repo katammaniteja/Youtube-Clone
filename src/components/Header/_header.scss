@@ -1,81 +1,81 @@
-@import './../../base';
+@import "./../../base";
 
-.header{
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  background-color: $black-primary;
+  height: 10vh;
+  width: 100%;
+
+  &-menu {
+    display: none;
+  }
+  &-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    background: transparent;
+  }
+  form {
     display: flex;
-    justify-content: space-between;
+    flex: 0.6;
+    padding: 0.1rem;
+    margin: 0.1rem;
+    border-radius: 3px;
+    border: 1.2px solid;
+    background-color: $black-secondary;
+
+    input {
+      width: 100%;
+      border: none;
+      background: transparent;
+      font-weight: 500;
+      padding: 0.3rem;
+      color: $text-color;
+
+      &:focus {
+        outline: none;
+      }
+    }
+    button {
+      color: $text-color;
+      background: transparent;
+      border: none;
+      margin-right: 5px;
+    }
+  }
+  &-icons {
+    display: flex;
+    flex: 0.15;
+    justify-content: space-around;
     align-items: center;
-    padding: 1rem 3rem;
-    background-color: $black-primary;
-    height: 10vh;
-    width: 100%;
 
-    &-menu{
-        display: none;
+    img {
+      border-radius: 50%;
+      width: 40px;
+      object-fit: contain;
     }
-    &-logo{
-        width: 40px;
-        height: 40px;
-        object-fit: contain;
-        background: transparent;
-    }
-    form{
-        display: flex;
-        flex: 0.6;
-        padding: 0.1rem;
-        margin: 0.1rem;
-        border-radius: 3px;
-        border: 1.2px solid;
-        background-color: $black-secondary;
-
-        input{
-            width: 100%;
-            border: none;
-            background: transparent;
-            font-weight: 500;
-            padding: 0.3rem;
-            color: $text-color;
-
-            &:focus{
-                outline: none;
-            }
-        }
-        button{
-            color: $text-color;
-            background: transparent;
-            border: none;
-            margin-right: 5px;
-        }
-    }
-    &-icons{
-        display: flex;
-        flex:0.15;
-        justify-content: space-around;
-        align-items: center;
-
-        img{
-            border-radius: 50%;
-            width: 40px;
-            object-fit: contain;
-        }
-    }
+  }
 }
 
-@media (max-width: 520px){
-    .header{
-        padding: 1rem;
+@media (max-width: 520px) {
+  .header {
+    padding: 1rem;
 
-        form{
-            flex: 1;
-        }
-        &-menu{
-            display: block;
-            margin-right:10px;
-        }
-        &-logo{
-            display: none;
-        }
-        &-icons>*:not(img){
-            display: none;
-        }
+    form {
+      flex: 1;
     }
+    &-menu {
+      display: block;
+      margin-right: 10px;
+    }
+    &-logo {
+      display: none;
+    }
+    &-icons > *:not(img) {
+      display: none;
+    }
+  }
 }
