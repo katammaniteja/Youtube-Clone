@@ -14,7 +14,7 @@ const Header = ({ HandleSidebar }) => {
       />
       <img
         src="https://clipart.info/images/ccovers/1590430652red-youtube-logo-png-xl.png"
-        alt=""
+        alt="youtube-logo"
         className="header-logo"
       />
       <form>
@@ -28,7 +28,7 @@ const Header = ({ HandleSidebar }) => {
         <MdApps size={28} />
         <img
           src="https://iconape.com/wp-content/png_logo_vector/avatar.png"
-          alt=""
+          alt="avatar"
         />
       </div>
     </div>
