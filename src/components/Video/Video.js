@@ -6,6 +6,7 @@ import request from "../../api";
 import { useState } from "react";
 import numeral from "numeral";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { useNavigate } from "react-router-dom";
 
 export default function Video({ video }) {
   const [views, setViews] = useState(null);
@@ -59,8 +60,14 @@ export default function Video({ video }) {
     get_channel_icon();
   }, [channelId]);
 
+  const navigate = useNavigate();
+
+  const handleVideoClick = () => {
+    navigate(`/watch/${_videoId}`);
+  };
+
   return (
-    <div className="video">
+    <div className="video" onClick={handleVideoClick}>
       <div className="video-top">
         <LazyLoadImage src={medium.url} effect="blur" />
         <span className="video-top-duration">{_duration}</span>

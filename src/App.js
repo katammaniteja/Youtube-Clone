@@ -7,6 +7,7 @@ import "./_app.scss";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
+import { WatchScreen } from "./components/Screens/WatchScreen/WatchScreen";
 
 export default function App() {
   const [sidebar, toggleSidebar] = useState(false);
@@ -51,6 +52,22 @@ export default function App() {
         element={
           <Layout>
             <LoginScreen />
+          </Layout>
+        }
+      />
+      <Route
+        path="/search"
+        element={
+          <Layout>
+            <h1>Search Results</h1>
+          </Layout>
+        }
+      />
+      <Route
+        path="/watch/:id"
+        element={
+          <Layout>
+            <WatchScreen />
           </Layout>
         }
       />
