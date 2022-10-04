@@ -20,6 +20,9 @@
       text-transform: uppercase;
       letter-spacing: 0.5px;
       border-radius: 0;
+      &.btn-gray {
+        background-color: gray;
+      }
       &:hover {
         color: #fff;
       }
