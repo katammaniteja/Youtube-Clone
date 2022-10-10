@@ -18,13 +18,11 @@ export const getChannelDetails = (id) => async (dispatch) => {
         id,
       },
     });
-    console.log(data);
     dispatch({
       type: CHANNEL_DETAILS_SUCCESS,
       payload: data.items[0],
     });
   } catch (error) {
-    console.log(error.response.data);
     dispatch({
       type: CHANNEL_DETAILS_FAIL,
       payload: error.response.data,
@@ -44,12 +42,9 @@ export const checkSubscriptionStatus = (id) => async (dispatch, getState) => {
         Authorization: `Bearer ${getState().auth.accessToken}`,
       },
     });
-    console.log(data);
     dispatch({
       type: SET_SUBSCRIPTION_STATUS,
       payload: data.items.length !== 0,
     });
-  } catch (error) {
-    console.log(error.response.data);
-  }
+  } catch (error) {}
 };

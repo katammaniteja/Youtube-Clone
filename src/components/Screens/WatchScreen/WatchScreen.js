@@ -1,7 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getVideosById } from "../../../redux/actions/videos.action";
+import {
+  getRelatedVideos,
+  getVideosById,
+} from "../../../redux/actions/videos.action";
 import { Comments } from "../../comments/Comments";
 import VideoHorizontal from "../../videoHorizontal/VideoHorizontal";
 import VideoMetaData from "../../VideoMetaData/VideoMetaData";
@@ -13,9 +16,12 @@ export const WatchScreen = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getVideosById(id));
+    dispatch(getRelatedVideos(id));
   }, [id, dispatch]);
 
-  const { video, loading } = useSelector((state) => state.selectedVideo);
+  const { video } = useSelector((state) => state.selectedVideo);
+
+  const { videos, loading } = useSelector((state) => state.relatedVideos);
 
   return (
     <div className="row">
@@ -35,8 +41,8 @@ export const WatchScreen = () => {
       </div>
 
       <div className="col-lg-4 col-md-4">
-        {[...Array(10)].map(() => {
-          return <VideoHorizontal />;
+        {videos?.map((video, index) => {
+          return <VideoHorizontal video={video} key={index} />;
         })}
       </div>
     </div>

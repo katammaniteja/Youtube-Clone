@@ -74,16 +74,16 @@ export default function VideoMetaData({
       </div>
       <div className="videometadata-description">
         {/* <ShowMoreText
-          lines={3}
-          more="Show more"
-          less="Show less"
-          className="content-css"
-          anchorClass="my-anchor-css-class"
-          onClick={this.executeOnClick}
-          expanded={false}
-          width={280}
-          truncatedEndingComponent={"... "}
-        > */}
+        lines={3}
+        more="Show more"
+        less="Show less"
+        className="content-css"
+        anchorClass="my-anchor-css-class"
+        onClick={this.executeOnClick}
+        expanded={false}
+        width={280}
+        truncatedEndingComponent={"... "}
+      > */}
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas accusamus
         repudiandae aperiam nulla tempora labore rerum, consequatur modi dolorem
         iusto similique! Aliquid cum voluptas deleniti, odio rerum ea facere
