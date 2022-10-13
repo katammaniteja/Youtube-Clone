@@ -8,6 +8,7 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { WatchScreen } from "./components/Screens/WatchScreen/WatchScreen";
+import { SearchScreen } from "./components/Screens/SearchScreen";
 
 export default function App() {
   const [sidebar, toggleSidebar] = useState(false);
@@ -56,10 +57,10 @@ export default function App() {
         }
       />
       <Route
-        path="/search"
+        path="/search/:query"
         element={
           <Layout>
-            <h1>Search Results</h1>
+            <SearchScreen />
           </Layout>
         }
       />

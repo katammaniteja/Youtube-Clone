@@ -6,6 +6,7 @@ import {
   homeVideosReducer,
   selectedVideoReducer,
   relatedVideoReducer,
+  searchedVideosReducer,
 } from "./reducers/vides.reducer";
 import { channelDetailReducer } from "./reducers/channel.reducer";
 
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
   selectedVideo: selectedVideoReducer,
   channelDetails: channelDetailReducer,
   relatedVideos: relatedVideoReducer,
+  searchedVideos: searchedVideosReducer,
 });
 
 const store = createStore(

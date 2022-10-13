@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import "./_header.scss";
 import { FaBars } from "react-icons/fa";
 import { AiOutlineSearch } from "react-icons/ai";
 import { MdNotifications, MdApps } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 const Header = ({ HandleSidebar }) => {
+  const [input, setInput] = useState("");
+
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate(`/search/${input}`);
+  };
+
   return (
     <div className="header">
       <FaBars
@@ -17,8 +27,13 @@ const Header = ({ HandleSidebar }) => {
         alt="youtube-logo"
         className="header-logo"
       />
-      <form>
-        <input type="text" placeholder="Search" />
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Search"
+          value={input}
+          onChange={(event) => setInput(event.target.value)}
+        />
         <button>
           <AiOutlineSearch size={22} />
         </button>
