@@ -37,7 +37,7 @@ export const WatchScreen = () => {
           ></iframe>
         </div>
         {video && <VideoMetaData video={video} videoId={id} />}
-        <Comments />
+        <Comments videoId={id} />
       </div>
 
       <div className="col-lg-4 col-md-4">

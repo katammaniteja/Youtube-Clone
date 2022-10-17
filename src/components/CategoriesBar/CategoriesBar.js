@@ -23,6 +23,8 @@ const keywords = [
   "Footbal",
   "Real Madrid",
   "Gatsby",
+  "System Design",
+  "Software Development",
 ];
 
 export default function CategoriesBar() {

@@ -1,17 +1,23 @@
+import moment from "moment";
 import React from "react";
 import "./_comment.scss";
 
-export const Comment = () => {
+export const Comment = ({ comment }) => {
+  const { authorDisplayName, authorProfileImageUrl, publishedAt, textDisplay } =
+    comment;
+
   return (
     <div className="comment p-2 d-flex">
       <img
-        src="https://iconape.com/wp-content/png_logo_vector/avatar.png"
+        src={authorProfileImageUrl}
         alt="avatar"
-        className="rounded-circle mr-3"
+        className="rounded-circle mr-5"
       />
       <div className="comment-body">
-        <p className="comment-header mb-1">Maniteja . 8 months ago</p>
-        <p className="mb-0">Nice Video Dude </p>
+        <p className="comment-header mb-1">
+          {authorDisplayName} . {moment(publishedAt).fromNow()}
+        </p>
+        <p className="mb-0">{textDisplay} </p>
       </div>
     </div>
   );

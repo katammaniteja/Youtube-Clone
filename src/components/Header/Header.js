@@ -15,6 +15,10 @@ const Header = ({ HandleSidebar }) => {
     navigate(`/search/${input}`);
   };
 
+  const renderHome = () => {
+    navigate("/");
+  };
+
   return (
     <div className="header">
       <FaBars
@@ -26,6 +30,7 @@ const Header = ({ HandleSidebar }) => {
         src="https://clipart.info/images/ccovers/1590430652red-youtube-logo-png-xl.png"
         alt="youtube-logo"
         className="header-logo"
+        onClick={renderHome}
       />
       <form onSubmit={handleSubmit}>
         <input

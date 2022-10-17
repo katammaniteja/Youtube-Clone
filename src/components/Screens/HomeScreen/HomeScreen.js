@@ -27,7 +27,7 @@ export default function HomeScreen() {
   };
 
   return (
-    <div className="container">
+    <div>
       <CategoriesBar />
       <InfiniteScroll
         dataLength={videos.length}
