@@ -159,29 +159,3 @@ export const getVideosBySearch = (keyword) => async (dispatch, getState) => {
     });
   }
 };
-
-export const getVideosByChannel = () => async (dispatch, getState) => {
-  try {
-    dispatch({
-      type: SUBSCRIPTIONS_CHANNEL_REQUEST,
-    });
-    const { data } = await request("/subscriptions", {
-      params: {
-        part: "snippet,contentDetails",
-        mine: true,
-      },
-      headers: {
-        Authorization: `Bearer ${getState().auth.accessToken}`,
-      },
-    });
-    dispatch({
-      type: SUBSCRIPTIONS_CHANNEL_SUCCESS,
-      payload: data.items,
-    });
-  } catch (error) {
-    dispatch({
-      type: SUBSCRIPTIONS_CHANNEL_FAIL,
-      payload: error.response.data,
-    });
-  }
-};

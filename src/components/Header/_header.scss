@@ -13,9 +13,6 @@
   top: 0;
   z-index: 999;
 
-  &-menu {
-    display: none;
-  }
   &-logo {
     width: 40px;
     height: 40px;
@@ -71,13 +68,7 @@
     form {
       flex: 1;
     }
-    &-menu {
-      display: block;
-      margin-right: 10px;
-    }
-    &-logo {
-      display: none;
-    }
+
     &-icons > *:not(img) {
       display: none;
     }

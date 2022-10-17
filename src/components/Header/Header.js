@@ -1,11 +1,18 @@
 import React, { useState } from "react";
 import "./_header.scss";
-import { FaBars } from "react-icons/fa";
 import { AiOutlineSearch } from "react-icons/ai";
-import { MdNotifications, MdApps } from "react-icons/md";
+import { MdNotifications } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import { BiLogOut } from "react-icons/bi";
+import { logout } from "../../redux/actions/auth.action";
+import { useDispatch } from "react-redux";
 
-const Header = ({ HandleSidebar }) => {
+const Header = () => {
+  const dispatch = useDispatch();
+  const logoutHandler = () => {
+    dispatch(logout());
+  };
+
   const [input, setInput] = useState("");
 
   const navigate = useNavigate();
@@ -21,11 +28,6 @@ const Header = ({ HandleSidebar }) => {
 
   return (
     <div className="header">
-      <FaBars
-        className="header-menu"
-        size={26}
-        onClick={() => HandleSidebar()}
-      />
       <img
         src="https://clipart.info/images/ccovers/1590430652red-youtube-logo-png-xl.png"
         alt="youtube-logo"
@@ -45,7 +47,11 @@ const Header = ({ HandleSidebar }) => {
       </form>
       <div className="header-icons">
         <MdNotifications size={28} />
-        <MdApps size={28} />
+        <BiLogOut
+          size={28}
+          onClick={logoutHandler}
+          style={{ cursor: "pointer" }}
+        />
         <img
           src="https://iconape.com/wp-content/png_logo_vector/avatar.png"
           alt="avatar"
